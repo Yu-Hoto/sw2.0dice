@@ -42,5 +42,4 @@ def diceroll (event)
       end
     end
   end
-  nil
 end
