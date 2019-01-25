@@ -11,6 +11,7 @@ GEM
       rest-client
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.6.0)
     event_emitter (0.2.6)
     ffi (1.9.23)
     http-cookie (1.0.3)
@@ -40,6 +41,7 @@ PLATFORMS
 
 DEPENDENCIES
   discordrb
+  dotenv
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
