@@ -1,6 +1,0 @@
-bgm/
-.bundle/
-.env.*
-Gemfile.lock
-vendor/
-rating.txt
