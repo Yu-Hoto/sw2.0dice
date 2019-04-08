@@ -4,8 +4,6 @@ def diceroll (event)
   else
     sum = "#{event.content}".match(/[+-][0-9]$/)
     sum = sum.to_s.to_i
-    rollresult = []
-    sumnumber = []
     respondtext = ""
     dicesum = 0
 
