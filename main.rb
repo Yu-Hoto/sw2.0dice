@@ -25,6 +25,10 @@ bot.command :setgame, description: 'If you say \"/setgame Ruina\", I start playi
   nil
 end
 
+bot.command :coc, description: 'roll d100 percent roll. \"/coc 50 spothidden\"' do |event, percent, skillname|
+  cocroll(event, percent.to_i, skillname)
+end
+
 bot.message do |event|
   diceroll(event)
 end
