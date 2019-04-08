@@ -2,8 +2,7 @@ def diceroll (event)
   a = "#{event.content}".scan(/[+-]*[0-9]*[Dd][0-9]+/)
   if a[0].nil?
   else
-    sum = "#{event.content}".match(/[+-][0-9]$/)
-    sum = sum.to_s.to_i
+    sum = "#{event.content}".match(/[+-][0-9]$/).to_s.to_i
     respondtext = ""
     dicesum = 0
 
