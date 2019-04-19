@@ -55,7 +55,6 @@ end
 
 def cocroll(event, percent, skillname)
   roll = rand(1..100)
-  roll = 5
   if percent >= roll
     result = "success!"
     result = "special!" if percent / 5 >= roll
@@ -68,4 +67,29 @@ def cocroll(event, percent, skillname)
     end
   end
   event.respond"#{skillname} ( #{roll} ) → **#{result}**"
+end
+
+def coccharacter(event)
+  str = [rand(1..6), rand(1..6), rand(1..6)]
+  con = [rand(1..6), rand(1..6), rand(1..6)]
+  pow = [rand(1..6), rand(1..6), rand(1..6)]
+  dex = [rand(1..6), rand(1..6), rand(1..6)]
+  app = [rand(1..6), rand(1..6), rand(1..6)]
+  siz = [rand(1..6), rand(1..6)]
+  int = [rand(1..6), rand(1..6)]
+  edu = [rand(1..6), rand(1..6), rand(1..6)]
+
+  respondText = """
+STR: (#{str}) = #{str.inject(:+)}
+CON: (#{con}) = #{con.inject(:+)}
+POW: (#{pow}) = #{pow.inject(:+)}
+DEX: (#{dex}) = #{dex.inject(:+)}
+APP: (#{app}) = #{app.inject(:+)}
+SIZ: (#{siz}) +6 = #{siz.inject(:+)+6}
+INT: (#{int}) +6 = #{int.inject(:+)+6}
+EDU: (#{edu}) +3 = #{edu.inject(:+)+3}
+"""
+  respondText.delete!("[")
+  respondText.delete!("]")
+  event.respond"#{respondText}"
 end
