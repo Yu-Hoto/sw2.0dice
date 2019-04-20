@@ -93,3 +93,29 @@ EDU: (#{edu}) +3 = #{edu.inject(:+)+3}
   respondText.delete!("]")
   event.respond"#{respondText}"
 end
+
+def plot(event, plotNum, name)
+  if plotNum == "reset"
+    event.respond"reset plot number."
+    @users.clear
+  end
+  if plotNum.to_i > 0
+    userName = event.channel.name
+    userName = name if name != nil
+    @users[userName] = plotNum.to_i
+    
+    event.respond"set #{userName} plot number \"#{plotNum}\"."
+  end
+
+  if plotNum == "open" && event.channel.name == "session"
+    respondText = ""
+    (1..6).reverse_each do |i|
+      respondText << i.to_s + ": "
+      @users.each{|name, plot| respondText << name + ", " if plot == i}
+      @users.reject!{|name, plot| plot == i}
+      respondText << "\n"
+    end
+    puts respondText
+    event.respond"#{respondText}"
+  end
+end

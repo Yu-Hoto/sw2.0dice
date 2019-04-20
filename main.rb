@@ -37,6 +37,11 @@ bot.command :coc, description: 'roll d100 percent roll. \"/coc 50 spothidden\"' 
   end
 end
 
+@users = {}
+bot.command :plot, description: 'plot on shinobigami.' do |event, plotNum, name|
+  plot(event, plotNum, name)
+end
+
 bot.message do |event|
   diceroll(event)
 end
