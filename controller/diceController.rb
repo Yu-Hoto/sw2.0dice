@@ -115,7 +115,6 @@ def plot(event, plotNum, name)
       @users.reject!{|name, plot| plot == i}
       respondText << "\n"
     end
-    puts respondText
-    event.respond"#{respondText}"
+    event.respond"```\n#{respondText}```"
   end
 end
