@@ -21,3 +21,8 @@ token="#{yourBotToken}"
 
 ### add bot with your server.
 https://discordapp.com/developers/applications/
+
+### run bot on terminal.
+```
+ruby main.rb
+```
